@@ -14,7 +14,9 @@ description = "Lint JavaScript and QML files"
 run = """
 shopt -s nullglob
 files=(*.qml components/*.qml)
-[ ${#files[@]} -gt 0 ] && qmllint -E "${files[@]}"
+if [ -n "${files[*]}" ]; then
+  qmllint -E "${files[@]}"
+fi
 """
 
 [tasks.format]
@@ -22,7 +24,9 @@ description = "Format JavaScript, QML, and Nix files in-place"
 run = """
 shopt -s nullglob
 files=(*.qml components/*.qml)
-[ ${#files[@]} -gt 0 ] && qmlformat -i "${files[@]}"
+if [ -n "${files[*]}" ]; then
+  qmlformat -i "${files[@]}"
+fi
 alejandra flake.nix
 """
 
