@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "my-bmw",
+  "name": "My BMW",
+  "version": "1.0.0",
+  "description": "BMW vehicle status and ConnectedDrive controls",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "MyBmwWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "My BMW",
+    "description": "BMW vehicle status and ConnectedDrive controls",
+    "category": "Utilities",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
